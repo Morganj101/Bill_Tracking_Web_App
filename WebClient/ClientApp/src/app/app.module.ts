@@ -9,15 +9,19 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
-import { BillsComponent } from './bills/bills.component';
-import { BillInfoComponent } from './bill-info/bill-info.component';
+import { BillAddComponent } from './bill-components/bill-add/bill-add.component';
+import { BillInfoComponent } from './bill-components/bill-info/bill-info.component';
+import { BillListComponent } from './bill-components/bill-list/bill-list.component';
+import { BillUpdateComponent } from './bill-components/bill-update/bill-update.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavMenuComponent,
-    BillsComponent,
+    BillAddComponent,
     BillInfoComponent,
+    BillListComponent,
+    BillUpdateComponent,
     CounterComponent,
     FetchDataComponent,
     HomeComponent
@@ -28,8 +32,10 @@ import { BillInfoComponent } from './bill-info/bill-info.component';
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'bill', component: BillInfoComponent },
-      { path: 'bills', component: BillsComponent },
+      { path: 'bills', component: BillListComponent },
+      { path: 'bill/add', component: BillAddComponent },
+      { path: 'bill/info', component: BillInfoComponent },
+      { path: 'bill/update', component: BillUpdateComponent },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
     ])
